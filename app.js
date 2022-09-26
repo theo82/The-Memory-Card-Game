@@ -21,6 +21,17 @@ function flipCard() {
     // checking wether the cards match
     // console.log(firstCard.dataset.name)
     // console.log(secondCard.dataset.name)
+    if (firstCard.dataset.name === secondCard.dataset.name) {
+      // it is a match => disable the cards
+      firstCard.removeEventListener('click', flipCard)
+      secondCard.removeEventListener('click', flipCard)
+    } else {
+      // not a match => unflip cards
+      setTimeout(() => {
+        firstCard.classList.remove('flip')
+        secondCard.classList.remove('flip')
+      }, 1500)
+    }
   }
 }
 
