@@ -67,6 +67,15 @@ const resetBoard = () => {
   ;[cardIsFlipped, lockBoard] = [false, false]
   ;[firstCard, secondCard] = [null, null]
 }
+
+// IIFE -> Immediately Invoked Function Expression -> function is called immediately after its definition
+;(function shuffle() {
+  cards.forEach(function (card) {
+    let randomPosition = Math.floor(Math.random() * 12)
+    card.style.order = randomPosition
+  })
+})()
+
 cards.forEach(function (card) {
   card.addEventListener('click', flipCard)
 })
