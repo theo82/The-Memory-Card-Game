@@ -6,8 +6,8 @@ let firstCard, secondCard
 
 function flipCard() {
   if (lockBoard) return
+  // if (this === firstCard) return
   if (this === firstCard) return
-  // if(this === firstCard) return;
   // this.classList.toggle('flip')
   this.classList.add('flip')
   console.log(lockBoard)
